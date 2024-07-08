@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "mifbotaniaaddon",
+  "version": "${version}",
+  "name": "MIFBotaniaAddon",
+  "description": "Botania addon, which add new content. Specially for MI: Foundation modpack",
+  "authors": [
+    "Smole17"
+  ],
+  "contact": {
+    "repo": "https://github.com/Smole17/mifbotaniaaddon"
+  },
+  "license": "unlicense",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "ru.smole.mifbotaniaaddon.MIFBotaniaAddon"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "owo": ">=${owo_version}",
+    "ftblibrary": ">=${ftb_library_version}",
+    "botania": "*"
+  }
+}

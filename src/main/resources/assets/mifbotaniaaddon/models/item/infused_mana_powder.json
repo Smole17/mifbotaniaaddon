@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "mifbotaniaaddon:item/infused_mana_powder"
+  }
+}
