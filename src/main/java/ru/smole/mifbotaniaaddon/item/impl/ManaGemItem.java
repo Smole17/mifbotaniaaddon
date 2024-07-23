@@ -1,14 +1,9 @@
 package ru.smole.mifbotaniaaddon.item.impl;
 
 import lombok.val;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 import ru.smole.mifbotaniaaddon.item.BotaniaAddonItems;
 import vazkii.botania.api.item.ManaDissolvable;
 import vazkii.botania.api.mana.ManaPool;
@@ -17,8 +12,6 @@ import vazkii.botania.common.helper.EntityHelper;
 import vazkii.botania.network.EffectType;
 import vazkii.botania.network.clientbound.BotaniaEffectPacket;
 import vazkii.botania.xplat.XplatAbstractions;
-
-import java.util.List;
 
 public class ManaGemItem extends Item implements ManaDissolvable {
 
@@ -44,10 +37,5 @@ public class ManaGemItem extends Item implements ManaDissolvable {
         }
 
         item.playSound(BotaniaSounds.blackLotus, 1F, .1F);
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("mifbotaniaaddon.mana_gem_desc").formatted(Formatting.GRAY));
     }
 }
