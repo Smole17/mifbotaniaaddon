@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import ru.smole.mifbotaniaaddon.MIFBotaniaAddon;
-import ru.smole.mifbotaniaaddon.item.impl.InfusedManaPowderItem;
+import ru.smole.mifbotaniaaddon.item.impl.ManaGemItem;
 import vazkii.botania.xplat.XplatAbstractions;
 
 import java.util.LinkedHashMap;
@@ -16,9 +16,9 @@ import java.util.function.BiConsumer;
 public class BotaniaAddonItems {
 
     private final Map<Identifier, Item> ALL = new LinkedHashMap<>();
-    public final Item INFUSED_MANA_POWDER_ITEM = make(new Identifier(MIFBotaniaAddon.MOD_ID, "infused_mana_powder"), new InfusedManaPowderItem(defaultBuilder().rarity(Rarity.RARE)));
+    public final Item MANA_GEM_ITEM = make(new Identifier(MIFBotaniaAddon.MOD_ID, "mana_gem"), new ManaGemItem(defaultBuilder().rarity(Rarity.RARE)));
 
-    public void registerItems(BiConsumer<Item, Identifier> r) {
+    public void register(BiConsumer<Item, Identifier> r) {
         for (var e : ALL.entrySet()) {
             r.accept(e.getValue(), e.getKey());
         }

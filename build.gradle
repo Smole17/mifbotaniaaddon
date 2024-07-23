@@ -7,7 +7,6 @@ version = project.mod_version
 group = project.maven_group
 base.archivesName = project.archives_base_name
 
-
 repositories {
     maven { url = "https://maven.jamieswhiteshirt.com/libs-release" }
     maven { url = "https://maven.terraformersmc.com" }
@@ -39,17 +38,18 @@ dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 
-    modImplementation("dev.emi:emi-fabric:${project.emi_version}")
-
-    modImplementation "com.github.emilyploszaj:step-height-entity-attribute:v1.2.0"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "dev.emi:emi-fabric:${project.emi_version}"
+    modImplementation "com.github.emilyploszaj:step-height-entity-attribute:v1.2.0"
     modImplementation "dev.ftb.mods:ftb-library-fabric:${project.ftb_library_version}"
     modImplementation annotationProcessor("io.wispforest:owo-lib:${project.owo_version}")
     modImplementation("vazkii.botania:Botania:${project.minecraft_version}-${project.botania_version}") {
         exclude(group: "dev.emi", module: "emi")
         exclude(group: "dev.emi", module: "emi-fabric")
     }
+    modImplementation "appeng:appliedenergistics2-fabric:${project.ae2_version}"
+    modImplementation "maven.modrinth:applied-botanics:${project.appbot_version}"
 }
 
 processResources {
@@ -58,7 +58,8 @@ processResources {
     inputs.property "loader_version", project.loader_version
     inputs.property "ftb_library_version", project.ftb_library_version
     inputs.property "owo_version", project.owo_version
-    inputs.property "botania_version", project.botania_version
+    inputs.property "ae2_version", project.ae2_version
+    inputs.property "appbot_version", project.appbot_version
     filteringCharset "UTF-8"
 
     filesMatching("fabric.mod.json") {
@@ -66,7 +67,9 @@ processResources {
                 "minecraft_version": project.minecraft_version,
                 "loader_version": project.loader_version,
                 "ftb_library_version": project.ftb_library_version,
-                "owo_version": project.owo_version
+                "owo_version": project.owo_version,
+                "ae2_version": project.ae2_version,
+                "appbot_version": project.appbot_version
     }
 }
 

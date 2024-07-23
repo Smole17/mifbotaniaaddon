@@ -23,6 +23,8 @@
     "minecraft": "${minecraft_version}",
     "owo": ">=${owo_version}",
     "ftblibrary": ">=${ftb_library_version}",
-    "botania": "*"
+    "botania": "*",
+    "ae2": ">=${ae2_version}",
+    "appbot": ">=${appbot_version}"
   }
 }

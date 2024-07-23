@@ -13,7 +13,7 @@ public class MIFBotaniaAddon implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        BotaniaAddonItems.registerItems(bind(Registry.ITEM));
+        BotaniaAddonItems.register(bind(Registry.ITEM));
     }
 
     private static <T> BiConsumer<T, Identifier> bind(Registry<? super T> registry) {

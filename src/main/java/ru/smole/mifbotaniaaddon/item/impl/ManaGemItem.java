@@ -20,15 +20,15 @@ import vazkii.botania.xplat.XplatAbstractions;
 
 import java.util.List;
 
-public class InfusedManaPowderItem extends Item implements ManaDissolvable {
+public class ManaGemItem extends Item implements ManaDissolvable {
 
-    public InfusedManaPowderItem(Settings settings) {
+    public ManaGemItem(Settings settings) {
         super(settings);
     }
 
     @Override
     public boolean hasGlint(ItemStack stack) {
-        return super.hasGlint(stack) || stack.isOf(BotaniaAddonItems.INFUSED_MANA_POWDER_ITEM);
+        return super.hasGlint(stack) || stack.isOf(BotaniaAddonItems.MANA_GEM_ITEM);
     }
 
     @Override
@@ -48,6 +48,6 @@ public class InfusedManaPowderItem extends Item implements ManaDissolvable {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("mifbotaniaaddon.infused_mana_powder_desc").formatted(Formatting.GRAY));
+        tooltip.add(Text.translatable("mifbotaniaaddon.mana_gem_desc").formatted(Formatting.GRAY));
     }
 }
