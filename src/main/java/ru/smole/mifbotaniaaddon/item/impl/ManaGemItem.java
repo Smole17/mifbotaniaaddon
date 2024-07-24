@@ -15,6 +15,8 @@ import vazkii.botania.xplat.XplatAbstractions;
 
 public class ManaGemItem extends Item implements ManaDissolvable {
 
+    private final static int RECEIVED_MANA = 100000;
+
     public ManaGemItem(Settings settings) {
         super(settings);
     }
@@ -31,7 +33,7 @@ public class ManaGemItem extends Item implements ManaDissolvable {
         val pos = pool.getManaReceiverPos();
 
         if (!item.world.isClient) {
-            pool.receiveMana((int) (pool.getMaxMana() * .1));
+            pool.receiveMana(RECEIVED_MANA);
             EntityHelper.shrinkItem(item);
             XplatAbstractions.INSTANCE.sendToTracking(item, new BotaniaEffectPacket(EffectType.BLACK_LOTUS_DISSOLVE, pos.getX(), pos.getY() + 0.5, pos.getZ()));
         }
